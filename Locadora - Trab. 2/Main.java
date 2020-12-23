@@ -8,7 +8,7 @@ public class Main {
 
         Scanner scan = new Scanner(System.in);
 
-        Gerente gerente = new Gerente("Raphael Garcia", 1, "raposones2", "147852");
+        Gerente gerente = new Gerente("ADMIN", 1, "admin", "admin");
         Rep_pessoas rep_pess = new Rep_pessoas();
         Rep_produtos rep_prod = new Rep_produtos();
         Locacoes locacoes = new Locacoes();

@@ -1,8 +1,11 @@
 import java.util.HashMap;
+import java.util.Scanner;
 
 public class Rep_produtos {
     // <chave - codigo  || valor - objeto>  
     HashMap<String, Produto> repos_produtos = new HashMap<String, Produto>();
+
+    static Scanner scan = new Scanner(System.in);
 
     public void addProduto(Produto produto){
         repos_produtos.put(produto.getCodigo(), produto);
@@ -115,16 +118,7 @@ public class Rep_produtos {
     public double calcPreco(Produto produto){ //preço base de locação
         double preco = 0;
         if (produto instanceof DVD){
-            DVD dvd = (DVD) produto;
-
-            if(dvd.isArranhado()){
-                
-                preco = 15 * 1.50;
-            }
-
-             else{
-                preco = 15;
-            }
+            preco = 15;
         }
 
         else if(produto instanceof BluRay){
@@ -135,7 +129,7 @@ public class Rep_produtos {
            VHS vhs = (VHS) produto;
 
             if(vhs.isCores()){
-                 preco = 10 + 5;
+                 preco = 15;
             }
 
             else{
@@ -146,16 +140,8 @@ public class Rep_produtos {
         else if(produto instanceof CD){
             CD cd = (CD) produto;
 
-            if(cd.isArranhado() && cd.isDuplo()){
-                preco = 25 * 1.50;
-            }
-
-            else if(cd.isArranhado() && !cd.isDuplo()){
-                 preco = 15 * 1.50;
-            }
-
-            else if(!cd.isArranhado() && cd.isDuplo()){
-                preco = 25;
+            if(cd.isDuplo()){
+                preco = 20;
             }
 
             else{
@@ -174,7 +160,60 @@ public class Rep_produtos {
                 preco = 30;
             }
         }
-
         return preco;
     }
+
+    public void checkIfModificado(Produto produto){
+
+        if (produto instanceof DVD){
+            DVD dvd = (DVD) produto;
+
+            System.out.println("O DVD está arranhado? \n[s]im / [n]ao");
+            String arg = scan.nextLine();
+
+            if(arg.equals("s")){
+                dvd.setArranhado(true);
+                remProduto(produto.getCodigo());;
+                addProduto(dvd);
+            }
+        }
+
+        else if(produto instanceof CD){
+            CD cd = (CD) produto;
+
+            System.out.println("O CD está arranhado? \n[s]im / [n]ao");
+            String arg = scan.nextLine();
+
+            if(arg.equals("s")){
+                cd.setArranhado(true);
+                remProduto(produto.getCodigo());;
+                addProduto(cd);
+            }
+        }
+    } 
+    
+
+    public double checkModificador(Produto produto){
+        double modificador = 0;
+
+        if (produto instanceof DVD){
+            DVD dvd = (DVD) produto;
+
+            if(dvd.isArranhado()){
+                System.out.println("+ ARRANHADO: +50%");
+                modificador = 0.50;
+            }
+        }
+
+        else if(produto instanceof CD){
+            CD cd = (CD) produto;
+
+            if(cd.isArranhado()){
+                System.out.println(" + ARRANHADO: +50%");
+                modificador = 0.50;
+            }
+        }
+
+        return modificador;
+    }  
 }
