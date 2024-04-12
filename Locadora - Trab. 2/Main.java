@@ -5,7 +5,6 @@ public class Main {
 
     public static void main(String[] args){
 
-
         Scanner scan = new Scanner(System.in);
 
         Gerente gerente = new Gerente("ADMIN", 1, "admin", "admin");
@@ -27,24 +26,31 @@ public class Main {
             System.out.println("\n[0] - SAIR");
             System.out.println("\nQual perfil deseja acessar?");
 
-            opc_perfil = Integer.parseInt(scan.nextLine());
-
-            if (opc_perfil != 0){
-                System.out.println("\nLOGIN: ");
-                login = scan.nextLine();
-                System.out.println("SENHA:");
-                senha = scan.nextLine();
+            String opc_str = scan.nextLine();
+            try{
+                opc_perfil = Integer.parseInt(opc_str);
+            }
+            catch(NumberFormatException e){
+                opc_perfil = -1;
             }
 
             switch(opc_perfil){
 
                 case 1:
+                    System.out.println("\nLOGIN: ");
+                    login = scan.nextLine();
+                    System.out.println("SENHA:");
+                    senha = scan.nextLine();
                     if (rep_pess.checkLogin_Gerente(login, senha)){
                         Ger_menu.menu(rep_pess, rep_prod);
                     }
                     break;
 
                 case 2:
+                    System.out.println("\nLOGIN: ");
+                    login = scan.nextLine();
+                    System.out.println("SENHA:");
+                    senha = scan.nextLine();
                     if (rep_pess.checkLogin_Operador(login, senha)){
                         Op_menu.op_menu(rep_pess, rep_prod, locacoes);
                     }
@@ -57,7 +63,7 @@ public class Main {
                     break;
 
                 default:
-                    System.out.println("Escolha entre as opções disponíveis!");
+                    System.out.println("\nEscolha entre as opções disponíveis!");
             }
                 
         } while (opc_perfil != 0);
