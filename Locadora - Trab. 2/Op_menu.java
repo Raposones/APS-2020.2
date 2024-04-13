@@ -142,7 +142,14 @@ public class Op_menu {
                     }
                 }
 
-                Locacoes loc = locacoes.getLocacao(loc_rem);
+                Locacoes loc;
+                try {
+                    loc = locacoes.getLocacao(loc_rem);
+                } catch (Exception e) {
+                    System.out.println("Locação não encontrada!");
+                    return;
+                }
+
                 Pessoa cliente = pessoas.getPessoa(loc.getMatricula());
                 Produto produto = produtos.getProduto(loc.getCodigo());
                 LocalDate datasaida = loc.getData_saída();
