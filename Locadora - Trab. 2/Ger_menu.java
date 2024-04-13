@@ -5,7 +5,7 @@ public class Ger_menu {
 
     public static void menu(Rep_pessoas pessoas, Rep_produtos produtos) {
 
-        int ger_opc;
+        int ger_opc = -1;
 
         do {
             System.out.println("\n[1] - Adicionar..");
@@ -14,11 +14,13 @@ public class Ger_menu {
             System.out.println("[4] - Listar..\n");
             System.out.println("[0] - SAIR");
             System.out.println("\n-- ESCOLHA UMA OPÇÃO --");
-
-            ger_opc = Integer.parseInt(scan.nextLine());
+            try {
+                ger_opc = Integer.parseInt(scan.nextLine());
+            } catch (NumberFormatException e) {
+                ger_opc = -1;
+            }
 
             switch (ger_opc) {
-
                 case 1:
                     add_menu(pessoas, produtos);
                     break;
@@ -108,8 +110,12 @@ public class Ger_menu {
                                 String dvd_ano_lancamento_str = scan.nextLine();
                                 try {
                                     dvd_ano_lancamento = Integer.parseInt(dvd_ano_lancamento_str);
+                                    if(dvd_ano_lancamento <= 0) {
+                                        System.out.println("Use números inteiros e maiores que zero!");
+                                        dvd_ano_lancamento = -1;
+                                    }
                                 } catch (NumberFormatException e) {
-                                    System.out.println("Use npumeros inteiros!");
+                                    System.out.println("Use números inteiros e maiores que zero!");
                                     dvd_ano_lancamento = -1;
                                 }
                             }
@@ -120,8 +126,12 @@ public class Ger_menu {
                                 String dvd_duracao_str = scan.nextLine();
                                 try {
                                     dvd_duracao = Integer.parseInt(dvd_duracao_str);
+                                    if(dvd_duracao <= 0) {
+                                        System.out.println("Use números inteiros e maiores que zero!");
+                                        dvd_duracao = -1;
+                                    }
                                 } catch (NumberFormatException e) {
-                                    System.out.println("Use números inteiros!");
+                                    System.out.println("Use números inteiros e maiores que zero!");
                                     dvd_duracao = -1;
                                 }
                             }
@@ -158,8 +168,12 @@ public class Ger_menu {
                                 String blu_ano_lancamento_str = scan.nextLine();
                                 try {
                                     blu_ano_lancamento = Integer.parseInt(blu_ano_lancamento_str);
+                                    if(blu_ano_lancamento <= 0) {
+                                        System.out.println("Use numeros inteiros e maiores que zero!");
+                                        blu_ano_lancamento = -1;
+                                    }
                                 } catch (NumberFormatException e) {
-                                    System.out.println("Use numeros inteiros!");
+                                    System.out.println("Use numeros inteiros e maiores que zero!");
                                     blu_ano_lancamento = -1;
                                 }
                             }
@@ -170,8 +184,12 @@ public class Ger_menu {
                                 String blu_duracao_str = scan.nextLine();
                                 try {
                                     blu_duracao = Integer.parseInt(blu_duracao_str);
+                                    if(blu_duracao <= 0) {
+                                        System.out.println("Use numeros inteiros e maiores que zero!");
+                                        blu_duracao = -1;
+                                    }
                                 } catch (NumberFormatException e) {
-                                    System.out.println("Use numeros inteiros1");
+                                    System.out.println("Use numeros inteiros e maiores que zero!");
                                     blu_duracao = -1;
                                 }
                             }
@@ -216,21 +234,28 @@ public class Ger_menu {
                                 String vhs_ano_lancamento_str = scan.nextLine();
                                 try {
                                     vhs_ano_lancamento = Integer.parseInt(vhs_ano_lancamento_str);
+                                    if(vhs_ano_lancamento <= 0) {
+                                        System.out.println("Use numeros inteiros e maiores que zero!");
+                                        vhs_ano_lancamento = -1;
+                                    }
                                 } catch (NumberFormatException e) {
-                                    System.out.println("Use numeros inteiros1");
+                                    System.out.println("Use numeros inteiros e maiores que zero!");
                                     vhs_ano_lancamento = -1;
                                 }
                             }
 
-                            
                             int vhs_duracao = -1;
                             while (vhs_duracao == -1) {
                                 System.out.println("Duração (minutos):");
                                 String vhs_duracao_str = scan.nextLine();
                                 try {
                                     vhs_duracao = Integer.parseInt(vhs_duracao_str);
+                                    if(vhs_duracao <= 0) {
+                                        System.out.println("Use numeros inteiros e maiores que zero!");
+                                        vhs_duracao = -1;
+                                    }
                                 } catch (NumberFormatException e) {
-                                    System.out.println("Use numeros inteiros1");
+                                    System.out.println("Use numeros inteiros e maiores que zero!");
                                     vhs_duracao = -1;
                                 }
                             }
@@ -277,15 +302,18 @@ public class Ger_menu {
                             System.out.println("Autor:");
                             String cd_autor = scan.nextLine();
 
-                            
                             int cd_faixas = -1;
                             while (cd_faixas == -1) {
                                 System.out.println("Número de faixas:");
                                 String cd_faixas_str = scan.nextLine();
                                 try {
                                     cd_faixas = Integer.parseInt(cd_faixas_str);
+                                    if(cd_faixas <= 0) {
+                                        System.out.println("Use numeros inteiros e maiores que zero!");
+                                        cd_faixas = -1;
+                                    }
                                 } catch (NumberFormatException e) {
-                                    System.out.println("Use numeros inteiros1");
+                                    System.out.println("Use numeros inteiros e maiores que zero!");
                                     cd_faixas = -1;
                                 }
                             }
@@ -339,8 +367,12 @@ public class Ger_menu {
                                 String lp_faixas_str = scan.nextLine();
                                 try {
                                     lp_faixas = Integer.parseInt(lp_faixas_str);
+                                    if(lp_faixas <= 0) {
+                                        System.out.println("Use numeros inteiros e maiores que zero!");
+                                        lp_faixas = -1;
+                                    }
                                 } catch (NumberFormatException e) {
-                                    System.out.println("Use numeros inteiros1");
+                                    System.out.println("Use numeros inteiros e maiores que zero!");
                                     lp_faixas = -1;
                                 }
                             }
@@ -394,8 +426,12 @@ public class Ger_menu {
                     String cliente_matricula_str = scan.nextLine();
                     try {
                         cliente_matricula = Integer.parseInt(cliente_matricula_str);
+                        if(cliente_matricula <= 0) {
+                            System.out.println("Use números inteiros e maiores que zero!");
+                            cliente_matricula = -1;
+                        }
                     } catch (NumberFormatException e) {
-                        System.out.println("Use números inteiros!");
+                        System.out.println("Use números inteiros e maiores que zero!");
                         cliente_matricula = -1;
                     }
                 }
@@ -416,8 +452,20 @@ public class Ger_menu {
                     System.out.println("Endereço:");
                     String end = scan.nextLine();
 
-                    System.out.println("Idade:");
-                    int idade = Integer.parseInt(scan.nextLine());
+                    int idade = -1;
+                    while (idade == -1) {
+                        System.out.println("Idade:");
+                        try {
+                            idade = Integer.parseInt(scan.nextLine());
+                            if(idade < 18 || idade > 150) {
+                                System.out.println("Idade precisa ser entre 18 e 150!");
+                                idade = -1;
+                            }
+                        } catch (NumberFormatException e) {
+                            System.out.println("Idade precisa ser entre 18 e 150!");
+                            idade = -1;
+                        }
+                    }
 
                     System.out.println("Sexo:");
                     String sexo = scan.nextLine();
@@ -439,8 +487,23 @@ public class Ger_menu {
                 break;
 
             case 3:
-                System.out.println("Digite a matrícula do operador a ser adicionado.");
-                int op_matricula = Integer.parseInt(scan.nextLine());
+                int op_matricula = -1;
+                while (op_matricula == -1) {
+                    System.out.println("Digite a matrícula do operador a ser adicionado.");
+                    System.out.println("[DIGITE 0 PARA SAIR]");
+                    String op_matricula_str = scan.nextLine();
+
+                    try {
+                        op_matricula = Integer.parseInt(op_matricula_str);
+                        if(op_matricula <= 0) {
+                            System.out.println("Use números inteiros e maiores que zero!");
+                            op_matricula = -1;
+                        }
+                    } catch (NumberFormatException e) {
+                        System.out.println("Use números inteiros e maiores que zero!");
+                        op_matricula = -1;
+                    }
+                }
 
                 if (pessoas.checkExistance_Operador(op_matricula)) {
                     System.out.println("OPERADOR JÁ CADASTRADO!");
@@ -565,8 +628,11 @@ public class Ger_menu {
                         String opmatricula_str = scan.nextLine();
                         try {
                             opmatricula = Integer.parseInt(opmatricula_str);
+                            if(opmatricula <= 0) {
+                                System.out.println("Use números inteiros e maiores que zero!");
+                            }
                         } catch (NumberFormatException e) {
-                            System.out.println("Use números inteiros!");
+                            System.out.println("Use números inteiros e maiores que zero!");
                         }
                     }
 
@@ -649,8 +715,11 @@ public class Ger_menu {
                         String mat_srch_str = scan.nextLine();
                         try {
                             mat_srch = Integer.parseInt(mat_srch_str);
+                            if(mat_srch <= 0) {
+                                System.out.println("Use números inteiros e maiores que zero!");
+                            }
                         } catch (NumberFormatException e) {
-                            System.out.println("Use números inteiros!");
+                            System.out.println("Use números inteiros e maiores que zero!");
                         }
                     }
 
@@ -681,13 +750,16 @@ public class Ger_menu {
                         String op_matr_str = scan.nextLine();
                         try {
                             op_matr = Integer.parseInt(op_matr_str);
+                            if(op_matr <= 0) {
+                                System.out.println("Use numeros inteiros e maiores que zero!");
+                            }
                         } catch (NumberFormatException e) {
-                            System.out.println("Use numeros inteiros!");
+                            System.out.println("Use numeros inteiros e maiores que zero!");
                         }
                     }
 
                     if (op_matr == 0)
-                        out = 1;
+                        out2 = 1;
 
                     else if (!pessoas.checkExistance_Operador(op_matr)) {
                         System.out.println("OPERADOR NÃO CADASTRADO / NÃO EXISTE!");
