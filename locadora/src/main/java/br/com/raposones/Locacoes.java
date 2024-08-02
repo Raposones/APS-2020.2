@@ -6,6 +6,11 @@ import java.time.temporal.ChronoUnit;
 import java.util.ArrayList;
 import java.util.Scanner;
 
+import br.com.raposones.models.Pessoa;
+import br.com.raposones.models.Produto;
+import br.com.raposones.repositories.Rep_pessoas;
+import br.com.raposones.repositories.Rep_produtos;
+
 public class Locacoes {
     static Scanner scan = new Scanner(System.in);
     ArrayList<Locacoes> locacoes = new ArrayList<Locacoes>();

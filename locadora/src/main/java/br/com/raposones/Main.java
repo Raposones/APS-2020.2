@@ -2,6 +2,15 @@ package br.com.raposones;
 
 import java.util.Scanner;
 
+import br.com.raposones.models.Cliente;
+import br.com.raposones.models.DVD;
+import br.com.raposones.models.Gerente;
+import br.com.raposones.models.Operador_sis;
+import br.com.raposones.repositories.Rep_pessoas;
+import br.com.raposones.repositories.Rep_produtos;
+import br.com.raposones.views.Ger_menu;
+import br.com.raposones.views.Op_menu;
+
 
 public class Main {
 
