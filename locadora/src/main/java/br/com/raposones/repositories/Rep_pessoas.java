@@ -12,6 +12,10 @@ public class Rep_pessoas {
     // <chave - matricula  || valor - objeto>  
     HashMap<Integer, Pessoa> repos_pessoas = new HashMap<Integer, Pessoa>();
 
+    public int lenghtRepository(){
+        return repos_pessoas.size();
+    }
+    
     public void addPessoa(Pessoa pessoa){
         if(!check_Duplicates(pessoa.getMatricula())) repos_pessoas.put(pessoa.getMatricula(), pessoa);
     }
