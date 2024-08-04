@@ -33,7 +33,7 @@ public class AddingNewOperator {
 
         int lengthOperatorsRepositoryAfterAdding = usersRepository.lenghtRepository();
 
-        assertEquals(lengthOperatorsRepositoryAfterAdding, 3);
+        assertEquals(3, lengthOperatorsRepositoryAfterAdding);
     }
 
     // há operador com a matrícula já cadastrada
@@ -49,6 +49,6 @@ public class AddingNewOperator {
 
         int lengthOperatorsRepositoryAfterAdding = usersRepository.lenghtRepository();
 
-        assertEquals(lengthOperatorsRepositoryAfterAdding, 1);
+        assertEquals(1, lengthOperatorsRepositoryAfterAdding);
     }
 }

@@ -33,7 +33,7 @@ public class AddingNewClient {
 
         int lengthClientsRepositoryAfterAdding = usersRepository.lenghtRepository();
 
-        assertEquals(lengthClientsRepositoryAfterAdding, 3);
+        assertEquals(3, lengthClientsRepositoryAfterAdding);
     }
 
     // há cliente com a matrícula já cadastrada
@@ -49,6 +49,6 @@ public class AddingNewClient {
 
         int lengthClientsRepositoryAfterAdding = usersRepository.lenghtRepository();
 
-        assertEquals(lengthClientsRepositoryAfterAdding, 1);
+        assertEquals(1, lengthClientsRepositoryAfterAdding);
     }
 }
