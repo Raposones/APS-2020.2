@@ -16,6 +16,10 @@ public class Rep_produtos {
 
     static Scanner scan = new Scanner(System.in);
 
+    public int lenghtProducts(){
+        return repos_produtos.size();
+    }
+
     public void addProduto(Produto produto){
         repos_produtos.put(produto.getCodigo(), produto);
     }
