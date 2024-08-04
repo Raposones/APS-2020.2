@@ -31,6 +31,10 @@ public class Locacoes {
         this.data_entrega = data_entrega;
     }
 
+    public int lenghtLocations() {
+        return locacoes.size();
+    }
+
     public String getCodigo() {
         return codigo;
     }
