@@ -1,10 +1,8 @@
 import br.com.raposones.repositories.Rep_produtos;
 
-import java.util.HashMap;
 import java.util.List;
 
 import br.com.raposones.models.Produto;
-import br.com.raposones.models.VHS;
 
 public class StubReProdutosFluxoAlternativo extends Rep_produtos {
 
@@ -13,4 +11,7 @@ public class StubReProdutosFluxoAlternativo extends Rep_produtos {
     return null;
   }
 
+  public List<Produto> getProdutos() {
+    return List.of();
+  }
 }
