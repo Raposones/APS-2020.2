@@ -11,7 +11,6 @@ public class ViewProductsFluxoAlternativo {
   @Test
   public void shouldReturnProductInfoWhenProductFound() {
     StubReProdutosFluxoPrincipal rep_produtos = new StubReProdutosFluxoPrincipal();
-
     List<Produto> produtos = rep_produtos.getProdutos();
 
     assertNull(produtos);
