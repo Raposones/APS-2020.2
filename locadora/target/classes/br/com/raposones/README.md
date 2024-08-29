@@ -5,4 +5,4 @@ Projeto feito para o segundo trabalho da cadeira de Análise e Projeto de Sistem
 
 ## Tecnologias
 O projeto foi criado com
-* Java puro e simples :P
+* Java
